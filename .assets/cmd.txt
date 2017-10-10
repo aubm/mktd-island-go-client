@@ -1,0 +1,8 @@
+git checkout -b github
+rm -f $GOPATH/src/mktd5/mktd-island/client/game/strategy/default.go
+cp $GOPATH/src/mktd5/mktd-island/client/.assets/default.template.go $GOPATH/src/mktd5/mktd-island/client/game/strategy/default.go
+git commit -a -m "reset default strategy"
+git rebase -i --root
+git push --force github github:master
+git checkout master
+git branch -D github
